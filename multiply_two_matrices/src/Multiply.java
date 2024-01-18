@@ -10,7 +10,8 @@
  */
 public class Multiply {
     public static void main(String[] args){
-        int[][] A={{1,2,3},{4,5,6}};
+        System.out.println("Hello world");
+	int[][] A={{1,2,3},{4,5,6}};
         int[][] B={{1,2},{3,4},{5,6}};
         int [][] C={{0,0},{0,0}};
         for(int i=0;i<2;i++){
