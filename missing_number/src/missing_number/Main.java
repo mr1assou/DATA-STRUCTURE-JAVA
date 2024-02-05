@@ -9,6 +9,5 @@ public class Main {
 			sum-=number;
 		}
 		System.out.println(sum);
-		
 	}
 }
