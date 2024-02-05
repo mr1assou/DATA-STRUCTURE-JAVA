@@ -13,11 +13,6 @@ public class Main {
 		second.next=third; //20 --->30
 		third.next=four; //30 --->40-->null
 		// display linkedList		
-		SinglyLinkedList.ListNode currentNode=linkedList.head;
-		while(currentNode!=null) {
-			System.out.println(currentNode.data);
-			currentNode=currentNode.next;
-		}
-		System.out.println("Null");
+		linkedList.display();
 	}
 }

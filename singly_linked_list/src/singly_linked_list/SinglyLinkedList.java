@@ -10,5 +10,12 @@ public class SinglyLinkedList {
 			this.next=null;
 		} 
 	}
-	
+	public void display() {
+		ListNode currentNode=head;
+		while(currentNode!=null) {
+			System.out.println(currentNode.data);
+			currentNode=currentNode.next;
+		}
+		System.out.println("Null");
+	}
 }
