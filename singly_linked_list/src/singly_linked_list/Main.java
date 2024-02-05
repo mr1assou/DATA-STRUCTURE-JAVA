@@ -14,5 +14,7 @@ public class Main {
 		third.next=four; //30 --->40-->null
 		// display linkedList		
 		linkedList.display();
+		//length of singly list
+		System.out.println("length of singly linked list is: "+linkedList.length());
 	}
 }

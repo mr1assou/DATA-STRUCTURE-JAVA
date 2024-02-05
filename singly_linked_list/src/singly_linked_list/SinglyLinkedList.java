@@ -18,4 +18,14 @@ public class SinglyLinkedList {
 		}
 		System.out.println("Null");
 	}
+	public int length(){
+		int count=0;
+		ListNode currentNode=head;
+		while(currentNode!=null) {
+			count++;
+			currentNode=currentNode.next;
+		}
+		return count;
+	}
+	
 }
