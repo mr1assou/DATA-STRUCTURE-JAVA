@@ -16,22 +16,18 @@ public class Main {
 		//logic if delete nodes in specific position
 		int position=2;
 		if(position==1) {
-			SinglyLinkedList.NodeList actualNode=linkedList.head;
 			linkedList.head=linkedList.head.next;
-			actualNode.next=null;
 		}
 		else {
-			SinglyLinkedList.NodeList actualNode=linkedList.head;
-			SinglyLinkedList.NodeList previousNode=null;
+			// here in this logic keep in mind Garbage collector
+			SinglyLinkedList.NodeList previousNode=linkedList.head;
 			int count=1;
-			while(count<position){
-				previousNode=actualNode;
-				actualNode=actualNode.next;
+			while(count<position-1){
+				previousNode=previousNode.next;
 				count++;
 			}
-			SinglyLinkedList.NodeList nextNode=actualNode.next;
-			previousNode.next=nextNode;
-			actualNode.next=null;
+			SinglyLinkedList.NodeList currentNode=previousNode.next;
+			previousNode.next=currentNode.next;
 		}
 		// display nodes
 		linkedList.display();
