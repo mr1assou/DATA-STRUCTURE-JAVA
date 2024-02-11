@@ -8,12 +8,9 @@ public class Main {
 		ListNode nodeTwo=new ListNode(15);
 		ListNode nodeThree=new ListNode(65);
 		// link nodes
-		head.next=nodeOne;
-		nodeOne.prev=head;
-		nodeOne.next=nodeTwo;
-		nodeTwo.prev=nodeOne;
-		nodeTwo.next=nodeThree;
-		nodeThree.prev=nodeTwo;
+		ListNode.insert(head, nodeOne);
+		ListNode.insert(nodeOne,nodeTwo);
+		ListNode.insert(nodeTwo, nodeThree);
 		ListNode.display(head);
 	}
 }
