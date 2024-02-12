@@ -12,6 +12,10 @@ public class ListNode {
 		nodeTwo.next=head;
 		tail=nodeTwo;
 	}
+	public static void insert(ListNode head) {
+		head.next=head;
+		tail=head;
+	}
 	public static void display(ListNode head) {
 		int count=0;
 		while(count<4) {

@@ -11,7 +11,7 @@ public class Main {
 				ListNode.insert(head,head, nodeOne);
 				ListNode.insert(head,nodeOne,nodeTwo);
 				ListNode.insert(head,nodeTwo, nodeThree);
-				// logic delete node in the start and in the end
+				// logic delete node in the start and in the end;
 				ListNode.display(head);
 	}
 }
