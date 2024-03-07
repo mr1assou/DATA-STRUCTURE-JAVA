@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
-		int []arr1= {2,5,7};
-		int []arr2= {3,4,9};
+		int []arr1= {2,5,7,9,10};
+		int []arr2= {3,4,9,12,14};
 		System.out.println(Arrays.toString(merge(arr1,arr2,arr1.length,arr2.length)));
 	}
 	public static int[] merge(int[] arr1,int[] arr2,int size1,int size2) {
