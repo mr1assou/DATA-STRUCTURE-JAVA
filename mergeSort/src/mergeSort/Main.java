@@ -23,6 +23,7 @@ public class Main {
 		for(int i=low;i<=high;i++) {
 			temp[i]=arr[i];
 		}
+		
 		int k=low,i=low,j=mid+1;
 		while(i<=mid && j<=high) {
 			if(temp[i]<temp[j]) {
