@@ -2,7 +2,7 @@ package leetCodeRomanToInteger;
 import java.util.HashMap;
 public class Main {
 	public static void main(String[] args) {
-		System.out.println(romanInteger("DCXXI"));
+		System.out.println(romanInteger("VI"));
 	}
 	public static int romanInteger(String s) {
 		HashMap<Character,Integer> hashMap=new HashMap<>();
