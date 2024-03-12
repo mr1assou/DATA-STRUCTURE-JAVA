@@ -2,30 +2,18 @@ package longestPrefixLeetCode;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] strs={"ab","a"};
+		String[] strs={"flower","flow","brbr"};
 		System.out.println(longestCommonPrefix(strs));
 	}
 	public static String longestCommonPrefix(String[] strs) {
-		String firstString=strs[0];
-		for(int i=0;i<=firstString.length();i++) {
-			int counter=0;
-			String substring=firstString.substring(0,i);
-			for(int j=0;j<strs.length;j++) {
-				if(strs[j].length()>=i) {
-					String item=strs[j].substring(0,i);
-					if(item.equals(substring)) {
-						counter++;
-					}
-				}
+		if(strs.length==0) return "";
+		String prefix=strs[0];
+		for(int i=1;i<strs.length;i++) {
+			while(strs[i].indexOf(prefix)!=0) {
+				prefix=prefix.substring(0,prefix.length()-1);
 			}
-			if(strs.length==1 || i==firstString.length()) {
-				System.out.println("@@@");
-				return firstString;
-			}
-			if(counter!=strs.length) {
-				return substring.substring(0,i-1);
-			}
+			System.out.println(prefix);
 		}
-		return "";
+		return prefix;
 	}
 }
