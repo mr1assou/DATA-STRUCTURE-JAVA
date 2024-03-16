@@ -1,28 +1,22 @@
 package leetCodeTwoSum;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Map;
 public class Main {
 	public static void main(String[] args) {
-		int[] arr= {3,3,3};
+		int[] arr= {3,2,4};
 		System.out.println(Arrays.toString(twoSum(arr,6)));
 	}
 	public static int[] twoSum(int nums[],int target) {
-		HashMap<Integer,Integer> hashMap=new HashMap<>();
+		Map<Integer,Integer> complements=new HashMap<>();
 		for(int i=0;i<nums.length;i++) {
-			hashMap.put(nums[i],i);
-		}
-		HashSet<Integer> set=new HashSet<>();
-		for(int i=0;i<nums.length;i++) {
-			int sub=target-nums[i];
-			if(hashMap.containsKey(sub) && hashMap.get(sub)!=i) {
-				set.add(i);
-				set.add(hashMap.get(sub));
+			Integer complementIndex=complements.get(nums[i]);
+			System.out.println(complements);
+			if(complementIndex!=null) {
+				return new int[] {i,complementIndex};
 			}
+			complements.put(target-nums[i],i);
 		}
-		int[] array=new int[set.size()];
-		int count=0;
-		for(int num:set) {array[count]=num;count++;}
-		return array;
+		return nums;
 	}
 }
