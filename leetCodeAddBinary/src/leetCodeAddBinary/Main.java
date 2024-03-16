@@ -1,9 +1,9 @@
 package leetCodeAddBinary;
 public class Main {
 	public static void main(String[] args) {
-		addBinary("11","1");
+		System.out.println(addBinary("11","1"));
 	}
-	public static void addBinary(String str1,String str2) {
+	public static String addBinary(String str1,String str2) {
 		StringBuilder sb=new StringBuilder();
 		int carry=0;
 		int i=str1.length()-1;
@@ -18,6 +18,6 @@ public class Main {
 			j--;
 		}
 		if(carry!=0) sb.append(carry);
-		System.out.println(sb.reverse());
+		return sb.reverse().toString();
 	}
 }
