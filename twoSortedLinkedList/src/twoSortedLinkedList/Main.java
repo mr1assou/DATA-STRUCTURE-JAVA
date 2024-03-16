@@ -3,9 +3,9 @@ package twoSortedLinkedList;
 public class Main {
 	public static void main(String[] args) {
 		LinkedList linkedList1=new LinkedList();
-		LinkedList.ListNode node1=new LinkedList.ListNode(1);
-		LinkedList.ListNode node2=new LinkedList.ListNode(2);
-		LinkedList.ListNode node3=new LinkedList.ListNode(4);
+		LinkedList.ListNode node1=new LinkedList.ListNode(4);
+		LinkedList.ListNode node2=new LinkedList.ListNode(7);
+		LinkedList.ListNode node3=new LinkedList.ListNode(10);
 		linkedList1.head=node1;
 		node1.next=node2;
 		node2.next=node3;
@@ -16,11 +16,14 @@ public class Main {
 		linkedList2.head=node4;
 		node4.next=node5;
 		node5.next=node6;
-		mergeTwoLists(linkedList1.head,linkedList2.head);
-		linkedList1.display();
+		LinkedList.ListNode current=mergeTwoLists(linkedList1.head,linkedList2.head);
+		while(current!=null) {
+			System.out.println(current.data);
+			current=current.next;
+		}
 	}
 	//LinkedList.ListNode
-	public static void mergeTwoLists(LinkedList.ListNode list1,LinkedList.ListNode list2) {
+	public static LinkedList.ListNode mergeTwoLists(LinkedList.ListNode list1,LinkedList.ListNode list2) {
 		LinkedList.ListNode a=list1;
 		LinkedList.ListNode temp1=a;
 		LinkedList.ListNode b=list2;
@@ -37,10 +40,6 @@ public class Main {
 				temp2=b;
 			}
 		}
-//		while(list1!=null) {
-//			System.out.println(list1.data);
-//			list1=list1.next;
-//		}
-	
+		return list1.data<=list2.data? list1:list2;
 	}
 }
