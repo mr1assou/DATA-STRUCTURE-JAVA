@@ -19,10 +19,12 @@ public class BinaryTree {
 		TreeNode second=new TreeNode(2);
 		TreeNode third=new TreeNode(3);
 		TreeNode fourth=new TreeNode(4);
+		TreeNode five=new TreeNode(7);
 		root=first;
 		first.left=second;
 		first.right=third;
 		second.left=fourth;
+		second.right=five;
 	}
 	public void preOrder(TreeNode root) {
 		if(root==null) {
@@ -33,16 +35,17 @@ public class BinaryTree {
 		preOrder(root.right);
 	}
 	public void iterativePreorder() {
-		Stack<BinaryTree.TreeNode> stack=new Stack<>();
-		stack.push(root);
-		while(!stack.isEmpty()) {
-			TreeNode temp=stack.pop();
-			System.out.println(temp.data);
-			if(temp.right!=null) {
-				stack.push(temp.right);
+		TreeNode temp=root;
+		Stack<TreeNode> stack=new Stack<>();
+		while(!stack.isEmpty() || temp!=null) {
+			if(temp!=null) {
+				System.out.println(temp.data);
+				stack.push(temp);
+				temp=temp.left;
 			}
-			if(temp.left!=null) {
-				stack.push(temp.left);
+			else {
+				temp=stack.pop();
+				temp=temp.right;
 			}
 		}
 	}
